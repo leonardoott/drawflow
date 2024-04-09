@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EMISv2 - Workflow Design</title>
+</head>
+<body>
+
+  <script src="drawflow.min.js"></script>
+  
+  <link rel="stylesheet" href="drawflow.css">
+  <link rel="stylesheet" href="style.css">
+
+    <header>
+        <h2>EMISv2 - Workflow Design</h2>
+      </header>
+      <div class="wrapper">
+        <div class="col">
+
+          <div class="drag-drawflow" draggable="true" ondragstart="drag(event)" data-node="start-workflow">
+            <img src="icons/Start-icon.png" alt="" style="float: left; width: 25px; margin: 10px 10px 0px 0px">
+            <span>Start Workflow</span>
+          </div>
+
+          <div class="drag-drawflow" draggable="true" ondragstart="drag(event)" data-node="api">
+            <img src="icons/Misc-Web-Database-icon.png" alt="" style="float: left; width: 25px; margin: 10px 10px 0px 0px">
+            <span>Rest API</span>
+          </div>
+
+          <div class="drag-drawflow" draggable="true" ondragstart="drag(event)" data-node="file">
+            <img src="icons/Documents-icon.png" alt="" style="float: left; width: 25px; margin: 10px 10px 0px 0px">
+            <span>File</span>
+          </div>
+
+          <div class="drag-drawflow" draggable="true" ondragstart="drag(event)" data-node="excel">
+            <img src="icons/Excel-icon.png" alt="" style="float: left; width: 25px; margin: 10px 10px 0px 0px">
+            <span>Excel</span>
+          </div>
+
+          <div class="drag-drawflow" draggable="true" ondragstart="drag(event)" data-node="end">
+            <img src="icons/Accept-icon.png" alt="" style="float: left; width: 25px; margin: 10px 10px 0px 0px">
+            <span>End</span>
+          </div>
+
+          <div class="drag-drawflow" draggable="true" ondragstart="drag(event)" data-node="decision">
+            <img src="icons/Compass-icon.png" alt="" style="float: left; width: 25px; margin: 10px 10px 0px 0px">
+            <span>Decision</span>
+          </div>
+
+          <div class="drag-drawflow" draggable="true" ondragstart="drag(event)" data-node="ftp">
+            <img src="icons/Filesystems-ftp-icon.png" alt="" style="float: left; width: 25px; margin: 10px 10px 0px 0px">
+            <span>FTP</span>
+          </div>
+
+          <div class="drag-drawflow" draggable="true" ondragstart="drag(event)" data-node="expression">
+            <img src="icons/code-braces-icon.png" alt="" style="float: left; width: 25px; margin: 10px 10px 0px 0px">
+            <span>Expression</span>
+          </div>
+
+          <div class="drag-drawflow" draggable="true" ondragstart="drag(event)" data-node="database">
+            <img src="icons/database-icon.png" alt="" style="float: left; width: 25px; margin: 10px 10px 0px 0px">
+            <span>DataBase</span>
+          </div>
+
+          <div class="drag-drawflow" draggable="true" ondragstart="drag(event)" data-node="mail">
+            <img src="icons/Mail-icon.png" alt="" style="float: left; width: 25px; margin: 10px 10px 0px 0px">
+            <span>E-mail</span>
+          </div>
+
+        </div>
+        <div class="col-right">
+          <div class="menu">
+            <ul>
+              <li onclick="">Export</li>
+              <li onclick="">Import</li>
+              <li onclick="editor.clearModuleSelected()">Clear</li>
+              <li onclick="editor.editor_mode='fixed'">Lock</li>
+              <li onclick="editor.editor_mode='edit'">Unlock</li>
+              <li onclick="editor.zoom_in()">Zoom In</li>
+              <li onclick="editor.zoom_out()">Zoom Out</li>
+              <li onclick="editor.zoom_reset()">Zoom Reset</li>
+              <!-- <li onclick="editor.changeModule('Home'); changeModule(event);" class="selected">Home</li>
+              <li onclick="editor.changeModule('Other'); changeModule(event);">Other Module</li> -->
+            </ul>
+          </div>
+          <div id="drawflow" ondrop="drop(event)" ondragover="allowDrop(event)">
+    
+            <div class="btn-export" onclick="Swal.fire({ title: 'Export',
+            html: '<pre><code>'+JSON.stringify(editor.export(), null,4)+'</code></pre>'
+            })">Export</div>
+            
+          </div>
+        </div>
+      </div>
+
+      <script src="javascript.js"></script>
+</body>
+</html>
